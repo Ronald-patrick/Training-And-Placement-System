@@ -1,0 +1,67 @@
+
+ <?php
+
+ session_start();
+
+ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
+ {
+     header("location: login-page.php");
+ }
+    $un = $_SESSION['user'];
+  $connect = mysqli_connect("localhost", "root", "", "userlogin");
+   $query = "SELECT * FROM studentvalidate WHERE username = '$un' ";
+   $result = mysqli_query($connect,$query);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Side Navigation Bar</title>
+	<link rel="stylesheet" href="StyleIndex.css">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="sidebar">
+        <h2>Student </h2>
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i>Profile</a></li>
+            <li><a href="#"><i class="fas fa-user"></i>Placement Drives</a></li>
+            <li><a href="#"><i class="fas fa-address-card"></i>Resumes</a></li>
+            <li><a href="#"><i class="fas fa-project-diagram"></i>Feedback</a></li>
+            <!-- <li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li>
+            <li><a href="#"><i class="fas fa-address-book"></i>Contact</a></li>
+            <li><a href="#"><i class="fas fa-map-pin"></i>Map</a></li> -->
+        </ul> 
+       <!--  <div class="social_media">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+      </div> -->
+    </div>
+    <div class="main_content">
+        <div class="header">Welcome!! Have a nice day.</div>  
+        <div class="info">
+              <?php
+    while($row = mysqli_fetch_assoc($result)){
+        ?>
+        <tr><th>Name :</th>
+          <td><?php  echo $row['Name']?></td></tr>
+        <tr><th>Branch :</th>
+          <td><?php  echo $row['Branch']?></td></tr>
+        <tr><th>Email :</th>
+          <td><?php  echo $row['Email']?></td></tr>
+        <tr><th>CGPA :</th>
+          <td><?php  echo $row['CGPA']?></td></tr>
+        <?php
+    }
+    ?>  
+
+      </div>
+    </div>
+</div>
+
+</body>
+</html>
