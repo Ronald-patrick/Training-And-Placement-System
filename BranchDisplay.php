@@ -1,12 +1,15 @@
+<?php
+include("configuration/config1.php");
+include("configuration/config.php");
+?>
 
 <?php
-include("configuration/config.php");
-include("configuration/config1.php");
 session_start();
 if(isset($_POST['company_list_name'])  ){
 	// $select1 = $_GET['Domain'];
 	// $select2 = $_GET['Department'];
 	$select3 = $_POST['company_list_name'];
+    $department = $_POST['department'];
 
 	$_SESSION['select_company']  = $select3;
 	// FOR DISPLAYING COMAPNY WISE 
@@ -14,8 +17,8 @@ if(isset($_POST['company_list_name'])  ){
 	$result3  = mysqli_query($conn1,$company_query);
 	$row_array = mysqli_fetch_array($result3);
 	$min       = $row_array['MinCGPA'];
-	$ver = 1;
-	$query2 = "SELECT Name, Upload_pdf , CGPA , Branch  FROM studentvalidate WHERE CGPA >= $min and verified =1  Order by CGPA DESC ";
+
+	$query2 = "SELECT Name , CGPA , Branch  FROM studentvalidate WHERE CGPA >= $min and Branch ='$department' Order by CGPA DESC ";
 	$result2 = mysqli_query($conn , $query2);
 	$numrows2 = mysqli_num_rows($result2);
 
@@ -25,7 +28,7 @@ if(isset($_POST['company_list_name'])  ){
 <html>
 <head>
 	<title>List</title>
-	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> 
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 		<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
@@ -34,7 +37,7 @@ if(isset($_POST['company_list_name'])  ){
 <body>
 
 <div class="wrapper">
-<div class="sidebar">
+		<div class="sidebar">
         <h2>Admin Profile</h2>
         <ul>
             <li><a href="NoticeBoard.php"><i class="fas fa-home"></i>Add Notice</a></li>
@@ -68,7 +71,6 @@ if(isset($_POST['company_list_name'])  ){
 								<td><?php echo $row_data['Name'];?></td>
 								<td><?php echo $row_data['Branch'];?></td>
 								<td><?php echo $row_data['CGPA'];?></td>
-								<td><a href="Resumes/<?php echo $row_data['Upload_pdf']?>" target="_blank">View Resume</a></td>
 							</tr>
 						<?php endwhile;?>
 					</table>

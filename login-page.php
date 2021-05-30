@@ -17,6 +17,7 @@ if(isset($_POST['submit']))
             session_start();
             $_SESSION['loggedin'] = true;
             $_SESSION['user'] = $user_name;
+            $_SESSION['roll'] = $res['roll_no'];
             // $_SESSION['full_name'] = $res['full_name'];
             echo "<script>
                 alert('Successfully Logged In');
@@ -44,15 +45,14 @@ if(isset($_POST['submit']))
 <head>
 <title>Login Page</title>
  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
- <link rel="stylesheet" type="text/css"
-    href="CSSSC/login-page.css">
 </head>
 <body>
 	<!-- <script type="text/javascript" src="login-authenticate.js"></script> -->
-	
+	<link rel="stylesheet" type="text/css"
+	href="login-page.css">
 <div class="login-pg">
 	<img src="iconfinder_Rounded-31_2024644.png" class = "avatar">
-	<h1>Login Here</h1>
+	<h1>Student Login</h1>
 <form name="f1" method ="POST" >
 	<div class="usnm">
 		<p>Username</p>
@@ -65,7 +65,6 @@ if(isset($_POST['submit']))
 	<div class="submit">
 	<input type="Submit" name="submit" placeholder="Sign In">
 </div>
-<p>Forgot Password?  <a href = "#">Reset Here</a></p>
 </form>
 </div>
 </script>

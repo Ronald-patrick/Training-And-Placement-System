@@ -31,14 +31,16 @@ $result = $conn->query($sql);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notice Details</title>
-    <link rel="stylesheet" type="text/css" href="CSSSC/feedback.css">
+    <link rel="stylesheet" type="text/css" href="./noticeDetail.css">
 </head>
 <body>
-
-  <h1>Notices:</h1>
-    <h2><?php echo $title ?></h1>
-    <h3><?php echo $date ?></h2>
-    <p><?php echo $desc ?> </p>
+    <div class="container">
+<h1><center>Notices:</center></h1>
+<div class="incontainer">
+    <h2><?php echo $title ?></h2>
+    <h3><?php echo $date ?></h3>
+    <p><?php echo $desc ?> </p></div>
+</div>
 
   <script>
       var arr = <?php echo json_encode($datas) ?>;

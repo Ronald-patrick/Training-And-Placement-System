@@ -45,7 +45,7 @@ if(isset($_GET['Domain']) && isset($_GET['Department']) && isset($_GET['company_
 <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<link rel="stylesheet" href="CSSSC/StyleIndex.css">
+<link rel="stylesheet" href="StyleIndex.css">
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>

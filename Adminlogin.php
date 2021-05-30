@@ -48,7 +48,7 @@ if(isset($_POST['submit']))
     href="login-page.css">
 <div class="login-pg">
     <img src="iconfinder_Rounded-31_2024644.png" class = "avatar">
-    <h1>Login Here</h1>
+    <h1>Admin Login</h1>
 <form name="f1" method ="POST" action="">
     <div class="usnm">
         <p>Username</p>
@@ -61,7 +61,6 @@ if(isset($_POST['submit']))
     <div class="submit">
     <input type="Submit" name="submit" placeholder="Sign In">
 </div>
-<p>Forgot Password?  <a href = "#">Reset Here</a></p>
 </form>
 </div>
 </script>

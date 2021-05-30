@@ -33,7 +33,7 @@ else
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-	<link rel="stylesheet" href="CSSSC/StyleIndex.css">
+	<link rel="stylesheet" href="StyleIndex.css">
 </head>
 <body>
 	<div class="wrapper">

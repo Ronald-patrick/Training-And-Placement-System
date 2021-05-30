@@ -10,22 +10,24 @@ if(isset($_POST['insert']))
 	$_password = $_POST['create_Password'];
 	$_companyname = $_POST['company_name'];
 	$_address = $_POST['address'];
+	$_telephone = $_POST['telephone'];
 
-	$qry = "INSERT INTO companyinfo (`ID`,`CompanyName`, `Password`, `Email`, `Address`) VALUES ('', '$_companyname', '$_password', '$_email','$_address')";
+	$qry = "INSERT INTO companyinfo (`ID`,`CompanyName`, `Password`, `Email`, `Address`, `Telephone`) VALUES ('', '$_companyname', '$_password', '$_email','$_address','$_telephone')";
 
-	$res = mysqli_query($conn,$qry);
-if($res){
-	echo "<script>
-	alert('Successfully Logged In');
-	location.replace('Home-page.php')
-	</script>";
-}
-else{
-	echo "<script>
-	alert('Fields Are Empty');
-	location.replace('CompanyRegister.php')
-	</script>";
-}
+	$res = mysqli_query($conn1,$qry);
+	echo $res;
+// if($res){
+// 	echo "<script>
+// 	alert('Successfully Registered');
+// 	location.replace('AdminPage.php')
+// 	</script>";
+// }
+// else{
+// 	echo "<script>
+// 	alert('Fields Are Empty');
+// 	location.replace('CompanyRegister.php')
+// 	</script>";
+// }
 }
 ?>
 
@@ -56,7 +58,7 @@ else{
 <body>
 	<h2><center>Company Registration Form</center></h2>
 	<div class="container">
-		<form method = "POST">
+		<form method = "POST" action="">
 
 			<div class="form-column">
 				<div class="form-group col-md-4">
@@ -78,12 +80,12 @@ else{
 							<label>Address</label>
 							<input type="text" class="form-control" placeholder="Type Address" name ="address">
 						</div>
-						<!-- <div class="form-column">
+						<div class="form-column">
 							<div class="form-group col-md-4">
 								<label>Telephone Number</label>
 								<input type="text" class="form-control" placeholder="Type Name" name ="telephone">
 							</div>
-						</div> -->
+						</div>
 					</div> 
 					<!-- <div class="form-group col-md-3">
 						<label>City</label>

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Placment Drives</title>
-	<link rel="stylesheet" href="CSSSC/StyleIndex.css">
+	<link rel="stylesheet" href="StyleIndex.css">
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 	<style>
 		.grid-item{

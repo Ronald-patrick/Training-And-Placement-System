@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2021 at 02:24 PM
+-- Generation Time: May 30, 2021 at 05:52 PM
 -- Server version: 10.4.14-MariaDB
--- PHP Version: 7.3.23
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -62,7 +62,8 @@ CREATE TABLE `companyreq` (
 
 INSERT INTO `companyreq` (`ID`, `MinCGPA`, `backlogs`, `Company`) VALUES
 (1, 5, 1, 'Morgan Stanley'),
-(3, 8, 0, 'Microsoft');
+(3, 8, 0, 'Microsoft'),
+(4, 8.5, 2, 'UBS Max');
 
 --
 -- Indexes for dumped tables
@@ -94,7 +95,7 @@ ALTER TABLE `companyinfo`
 -- AUTO_INCREMENT for table `companyreq`
 --
 ALTER TABLE `companyreq`
-  MODIFY `ID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -14,12 +14,11 @@ if(!$conn)
 }
 
 
-$date=$_POST['date'];
 $title=$_POST['title'];
 $story=$_POST['story'];
 
 
-$qry = "INSERT INTO notice (id,title, ndate , descr) VALUES ('','$title','','$story')";
+$qry = "INSERT INTO notice (title, descr) VALUES ('$title','$story')";
 
 if ($conn->query($qry) === TRUE) {
   echo "New record created successfully";

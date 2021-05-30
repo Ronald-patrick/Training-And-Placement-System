@@ -4,7 +4,7 @@ include("configuration/config.php");
 ?>
 
 <?php
-$query1 = "SELECT ID , Company FROM companyreq" ;
+$query1 = "SELECT ID , CompanyName FROM companyinfo" ;
 $result1 = mysqli_query($conn1,$query1);
 $numrows1 = mysqli_num_rows($result1);
 ?>
@@ -13,7 +13,7 @@ $numrows1 = mysqli_num_rows($result1);
 <html>
 <head>
 	<title>Eligible Student</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" crossorigin="anonymous"> 
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 		<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
@@ -38,11 +38,11 @@ $numrows1 = mysqli_num_rows($result1);
 			<!--   <div class="header"></div> -->  
 			<div class="info">
 
-				<a href="BranchWise.php" class="btn btn-info">Branch</a>
-				<a href="EligibleStudent.php" class="btn btn-info active">All Students</a>
+				<a class="btn btn-info active">Branch</a>
+				<a href="EligibleStudent.php" class="btn btn-info">All Students</a>
 				<br>
 				<br>
-				<form method="POST" name = "filterLarge" action = "ELigible_Student_list.php" >
+				<form method="POST" name = "filterLarge" action = "BranchDisplay.php" >
 
 					<!-- <select class="form-control form-control-lg" name = "Domain">
 						<option>Select</option>
@@ -50,8 +50,8 @@ $numrows1 = mysqli_num_rows($result1);
 						<option value ="company">Company</option>
 					</select>  -->
 				<!-- <br>	 -->
-					<!-- <select  class="form-control form-control-lg" name = 'Department' id = "dept">
-						<option>SELECT</option>
+					<select  class="form-control form-control-lg" name = 'department' id = "dept">
+						<option>Select Branch</option>
 
 						<option value ="Computer" >Computer</option>
 						<option value ="IT">I.T</option>
@@ -59,7 +59,7 @@ $numrows1 = mysqli_num_rows($result1);
 						<option value ="Ecs">ECS</option>
 
 					</select> 
-					<br> -->
+					<br>
 
 
 					<select class="form-control form-control-lg" name = "company_list_name" id ="datalist">
@@ -69,7 +69,7 @@ $numrows1 = mysqli_num_rows($result1);
 							while($res = mysqli_fetch_assoc($result1))
 							{
 								?>
-								<option value = '<?php echo $res['Company'];?>'><?php echo $res['Company'];?></option>
+								<option value = '<?php echo $res['CompanyName'];?>'><?php echo $res['CompanyName'];?></option>
 
 								<?php
 							}

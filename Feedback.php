@@ -35,10 +35,12 @@ $conn->close();
     <title>Feedback Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="CSSSC/Feedback.css">
+    <link rel="stylesheet" href="./Feedback.css">
 </head>
 <body>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
 
 <div class="container">
 

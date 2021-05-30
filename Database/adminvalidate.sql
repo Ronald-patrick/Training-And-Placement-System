@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2021 at 02:25 PM
+-- Generation Time: May 30, 2021 at 05:51 PM
 -- Server version: 10.4.14-MariaDB
--- PHP Version: 7.3.23
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,40 +18,48 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `feedback_blog`
+-- Database: `user`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blog_data`
+-- Table structure for table `adminvalidate`
 --
 
-CREATE TABLE `blog_data` (
-  `Id` int(11) NOT NULL,
-  `Title` varchar(50) NOT NULL,
-  `Content` longtext NOT NULL
+CREATE TABLE `adminvalidate` (
+  `ID` int(11) NOT NULL,
+  `Username` varchar(50) NOT NULL,
+  `Password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `adminvalidate`
+--
+
+INSERT INTO `adminvalidate` (`ID`, `Username`, `Password`) VALUES
+(1, 'Admin1', 'Admin1test'),
+(2, 'admin', 'root');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `blog_data`
+-- Indexes for table `adminvalidate`
 --
-ALTER TABLE `blog_data`
-  ADD PRIMARY KEY (`Id`);
+ALTER TABLE `adminvalidate`
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `blog_data`
+-- AUTO_INCREMENT for table `adminvalidate`
 --
-ALTER TABLE `blog_data`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `adminvalidate`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
